@@ -1,0 +1,87 @@
+{
+  "name": "github",
+  "nodes": [
+    {
+      "parameters": {
+        "rule": {
+          "interval": [
+            {
+              "triggerAtHour": 20
+            }
+          ]
+        }
+      },
+      "type": "n8n-nodes-base.scheduleTrigger",
+      "typeVersion": 1.2,
+      "position": [
+        0,
+        0
+      ],
+      "id": "06194d28-0800-41b2-878a-2db2d6f39209",
+      "name": "Schedule Trigger"
+    },
+    {
+      "parameters": {
+        "authentication": "oAuth2",
+        "resource": "file",
+        "owner": {
+          "__rl": true,
+          "value": "MihirDomadiya",
+          "mode": "list",
+          "cachedResultName": "MihirDomadiya",
+          "cachedResultUrl": "https://github.com/MihirDomadiya"
+        },
+        "repository": {
+          "__rl": true,
+          "value": "n8n-github-streak-maker",
+          "mode": "list",
+          "cachedResultName": "n8n-github-streak-maker",
+          "cachedResultUrl": "https://github.com/MihirDomadiya/n8n-github-streak-maker"
+        },
+        "filePath": "={{ $json['Readable date'] }}",
+        "fileContent": "Hey",
+        "commitMessage": "=Hey this commit done on {{ $json['Readable date'] }}"
+      },
+      "type": "n8n-nodes-base.github",
+      "typeVersion": 1.1,
+      "position": [
+        220,
+        0
+      ],
+      "id": "f38f961e-790e-4061-903d-861cdc60df24",
+      "name": "GitHub",
+      "webhookId": "bf5a2912-e829-4115-a481-d3b9f423fc08",
+      "credentials": {
+        "githubOAuth2Api": {
+          "id": "Ypi8iJL2S2vq120V",
+          "name": "GitHub account 2"
+        }
+      }
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Schedule Trigger": {
+      "main": [
+        [
+          {
+            "node": "GitHub",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "37c55be7-0a54-4148-9ee7-53d785825f3f",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "333156b7f38c6b848113fa6570daab35a66f7bc5f38c2ec1ceacea0e46ad637c"
+  },
+  "id": "XiVqagMOvd0kC84V",
+  "tags": []
+}
