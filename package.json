@@ -1,6 +1,7 @@
 {
   "name": "n8n-github-streak-maker",
   "version": "1.0.0",
+  "type": "module",
   "description": "Maintain your GitHub contribution streak effortlessly — this workflow automatically commits to your GitHub repository **every day at 8:00 PM**, so your green squares never stop growing! 🌱",
   "main": "2025-06-08T11:22:55.001+05:30.js",
   "scripts": {
