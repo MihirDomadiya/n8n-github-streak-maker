@@ -1,7 +1,6 @@
 # 🔁 GitHub Streak Automation with n8n
 
 Maintain your GitHub contribution streak effortlessly — this workflow automatically commits to your GitHub repository **every day at 8:00 PM**, so your green squares never stop growing! 🌱
-
 ---
 
 ## 🚀 What is This?
