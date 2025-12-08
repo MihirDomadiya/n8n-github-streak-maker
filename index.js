@@ -26,6 +26,6 @@ const data = { date };
 jsonfile.writeFile(path, data, () => {
     simpleGit()
         .add([path])
-        .commit("Commit for 14 Nov 2024", { '--date': date })
+        .commit("Commit for 14 November 2024", { '--date': date })
         .push();
 });
