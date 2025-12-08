@@ -19,13 +19,13 @@ import simpleGit from "simple-git";
 const path = "./data.json";
 
 // Target date
-const date = moment("2025-11-14").format(); // or use toISOString()
+const date = moment("2025-11-14").format();
 // YYYY-MM-DD
 const data = { date };
 
 jsonfile.writeFile(path, data, () => {
     simpleGit()
         .add([path])
-        .commit("Commit for 14 Novembe 2024", { '--date': date })
+        .commit("Commit for 14 November 2024", { '--date': date })
         .push();
 });
