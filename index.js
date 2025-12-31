@@ -19,7 +19,7 @@ import simpleGit from "simple-git";
 const path = "./data.json";
 
 // Target date
-const date = moment("2025-12-29").format();
+const date = moment("2025-12-30").format();
 // YYYY-MM-DD
 const data = { date };
 
