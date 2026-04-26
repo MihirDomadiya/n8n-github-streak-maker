@@ -19,16 +19,10 @@ import simpleGit from "simple-git";
 const path = "./data.json";
 const git = simpleGit();
 
-// 🗓️ Add all the dates you want to backfill here (YYYY-MM-DD)
 const dates = [
-  "2026-02-04",
-  "2026-02-05",
-  "2026-02-06",
-  "2026-02-07",
-  "2026-02-08",
-  "2026-02-10",
-  "2026-02-11",
-  "2026-02-12",
+  "2026-04-24",
+  "2026-04-25",
+  "2026-04-26",
 ];
 
 const makeCommit = (dateStr) => {
