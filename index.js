@@ -17,15 +17,51 @@ import moment from "moment";
 import simpleGit from "simple-git";
 
 const path = "./data.json";
+const git = simpleGit();
 
-// Target date
-const date = moment("2026-02-05").format();
-// YYYY-MM-DD
-const data = { date };
+// 🗓️ Add all the dates you want to backfill here (YYYY-MM-DD)
+const dates = [
+  "2026-02-04",
+  "2026-02-05",
+  "2026-02-06",
+  "2026-02-07",
+  "2026-02-08",
+  "2026-02-10",
+  "2026-02-11",
+  "2026-02-12",
+];
 
-jsonfile.writeFile(path, data, () => {
-    simpleGit()
+const makeCommit = (dateStr) => {
+  return new Promise((resolve, reject) => {
+    const date = moment(dateStr).format();
+    const data = { date };
+
+    jsonfile.writeFile(path, data, (err) => {
+      if (err) return reject(err);
+
+      git
         .add([path])
-        .commit("Commit for 14 November 2024", { '--date': date })
-        .push();
+        .commit(`Commit for ${dateStr}`, { "--date": date })
+        .then(resolve)
+        .catch(reject);
+    });
+  });
+};
+
+const run = async () => {
+  for (const dateStr of dates) {
+    console.log(`⏳ Committing for ${dateStr}...`);
+    await makeCommit(dateStr);
+    console.log(`✅ Done: ${dateStr}`);
+  }
+
+  // Push all commits at once after the loop
+  console.log("🚀 Pushing all commits...");
+  await git.push();
+  console.log("🎉 All commits pushed successfully!");
+};
+
+run().catch((err) => {
+  console.error("❌ Error:", err);
+  process.exit(1);
 });
