@@ -20,9 +20,10 @@ const path = "./data.json";
 const git = simpleGit();
 
 const dates = [
-  "2026-04-24",
-  "2026-04-25",
-  "2026-04-26",
+  "2026-05-01",
+  "2026-05-08",
+  "2026-05-11",
+  "2026-05-12",
 ];
 
 const makeCommit = (dateStr) => {
